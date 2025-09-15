@@ -1,24 +1,24 @@
 import "./styles/theme.css";
 import "./styles/global.css";
 
-import { Contariner } from "./components/Contariner";
+import { Container } from "./components/Container";
 import { Heading } from "./components/Heading";
 
 export function App() {
   return (
     <>
-      <Contariner>
+      <Container>
         <Heading>LOGO</Heading>
-      </Contariner>
-      <Contariner>
+      </Container>
+      <Container>
         <Heading>MENU</Heading>
-      </Contariner>
-      <Contariner>
+      </Container>
+      <Container>
         <Heading>FORM</Heading>
-      </Contariner>
-      <Contariner>
+      </Container>
+      <Container>
         <Heading>FOOTER</Heading>
-      </Contariner>
+      </Container>
     </>
   );
 }
