@@ -3,6 +3,7 @@
   "editor.glyphMargin": false,
   "workbench.activityBar.location": "default",
   "files.eol": "\n",
+  "workbench.editor.labelFormat": "short",
 
   // 🛠 Format and Lint
   "editor.defaultFormatter": "esbenp.prettier-vscode",
