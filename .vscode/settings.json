@@ -4,6 +4,7 @@
   "workbench.activityBar.location": "default",
   "files.eol": "\n",
   "workbench.editor.labelFormat": "short",
+  "explorer.compactFolders": false,
 
   // 🛠 Format and Lint
   "editor.defaultFormatter": "esbenp.prettier-vscode",
