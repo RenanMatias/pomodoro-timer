@@ -5,10 +5,13 @@ import { DefaultInput } from "../DefaultInput";
 import { PlayCircleIcon } from "lucide-react";
 import type { TaskModel } from "../../models/TaskModel";
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext";
+import { getNextCycle } from "../../utils/getNextCycle";
 
 export function MainForm() {
-  const { setState } = useTaskContext();
+  const { state, setState } = useTaskContext();
   const taskNameInput = useRef<HTMLInputElement>(null);
+
+  const nextCycle = getNextCycle(state.currentCycle);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,7 +42,7 @@ export function MainForm() {
         ...prevState,
         config: { ...prevState.config },
         activeTask: newTask,
-        currentCycle: 1, // temp value
+        currentCycle: nextCycle,
         secondsRemaining, // temp value
         formattedSecondsRemaining: "00:00", // temp value
         tasks: [...prevState.tasks, newTask],
