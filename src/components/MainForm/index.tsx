@@ -40,6 +40,17 @@ export function MainForm() {
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+
+    const worker = new Worker(new URL("../../workers/timerWorker.js", import.meta.url));
+
+    worker.postMessage("PLEASE");
+    worker.postMessage("SAY HI");
+    worker.postMessage("SOMETHING ELSE");
+    worker.postMessage("CLOSE");
+
+    worker.onmessage = function (event) {
+      console.log("MAIN RECEIVED:", event.data);
+    };
   }
 
   function handleInterruptTask() {
